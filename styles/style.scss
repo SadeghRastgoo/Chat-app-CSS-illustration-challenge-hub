@@ -1,0 +1,350 @@
+/* My Notes => 400, 500, 700  */
+// - Mobile: 375px
+// - Desktop: 1440px
+
+* {
+  padding: 0;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #fafafa;
+}
+
+// Page Layout Design
+.blob {
+  width: 45rem;
+  height: 75vh;
+  position: fixed;
+}
+.blob-l {
+  border-radius: 0 0 50rem 50rem;
+  background: linear-gradient(
+    0deg,
+    rgba(136, 56, 240, 1) 20%,
+    rgba(233, 66, 240, 1) 100%
+  );
+  z-index: 9;
+  left: -30rem;
+  top: -20rem;
+
+  @media (min-width: 1000px) {
+    left: -10rem;
+    top: 0;
+  }
+}
+.blob-r {
+  border-radius: 50rem 50rem 0 0;
+  background: linear-gradient(
+    0deg,
+    rgba(136, 56, 240, 1) 20%,
+    rgba(233, 66, 240, 1) 100%
+  );
+  opacity: 0.04;
+  right: -30rem;
+  bottom: -20rem;
+
+  @media (min-width: 1000px) {
+    right: -15rem;
+    bottom: 0;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  position: relative;
+  z-index: 99;
+  width: 80%;
+  max-width: 82rem;
+  margin: 7rem auto;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: 1000px) and (min-height: 500px) {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+
+    .mobile {
+      margin: 0;
+    }
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 1000px) {
+      text-align: left;
+    }
+
+    .hero-text__heading {
+      font-size: 3.75rem;
+      font-weight: 500;
+      color: hsl(271, 36%, 24%);
+    }
+
+    .hero-text__paragraph {
+      max-width: 45ch;
+      line-height: 1.6;
+      color: hsl(270, 7%, 64%);
+    }
+  }
+}
+
+// Mobile Element ------------------------
+.mobile {
+  font-size: 1.4rem;
+  background-color: hsl(270, 20%, 96%);
+  width: 30rem;
+  height: 58rem;
+  margin: auto;
+  border-radius: 3.75rem;
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 22px 27px -5px,
+    rgba(0, 0, 0, 0.25) 0px 8px 16px -8px;
+  border: 1.2rem solid #fff;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 2rem;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 0 0 1.5rem 1.5rem;
+    z-index: 999;
+  }
+}
+
+.m-header-container {
+  background: linear-gradient(
+    90deg,
+    rgba(136, 56, 240, 1) 20%,
+    rgba(233, 66, 240, 1) 100%
+  );
+  border-radius: 0 0 7px 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 7.75rem;
+  position: relative;
+  box-shadow: 0 2px 0 rgba(233, 66, 240, 0.75);
+
+  .m-header {
+    position: absolute;
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 0;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    // border: 1px solid red;
+
+    .details-icon {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.bio {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .bio__avatar {
+    width: 3.35rem;
+    height: 3.35rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1.75px #fff;
+    margin-left: 1.5rem;
+  }
+
+  .bio-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+
+    &__username {
+      font-weight: 500;
+    }
+    &__status {
+      font-size: 1rem;
+      color: hsl(276, 100%, 81%);
+    }
+  }
+}
+
+// Footer
+.m-footer-container {
+  bottom: -2.5rem;
+  transition: 0.5s;
+
+  &:hover {
+    bottom: 1rem;
+  }
+  // ++
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 10rem;
+  position: absolute;
+  // bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
+  height: 4.5rem;
+  padding: 1rem;
+  gap: 0.7rem;
+  z-index: 999;
+
+  .input-field {
+    padding-left: 5px;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    &::placeholder {
+      font-weight: 400;
+      color: hsl(206, 6%, 79%);
+    }
+  }
+
+  .send-btn {
+    font-size: 3rem;
+    color: hsl(271, 36%, 24%);
+  }
+}
+
+// Body
+.m-body-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 8rem;
+  padding: 1rem;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 1.15rem;
+
+  .i-message {
+    color: hsl(276, 55%, 52%);
+    background-color: #ede5f4;
+    border-radius: 10px 10px 10px 1px;
+    padding: 7.5px;
+    max-width: 24ch;
+    line-height: 1.4;
+  }
+  .x-message {
+    color: hsl(271, 15%, 43%);
+    background-color: #fffffe;
+    margin-left: auto;
+    border-radius: 10px 10px 1px 10px;
+    padding: 7.5px;
+    max-width: 24ch;
+    line-height: 1.4;
+  }
+  .x-image-message {
+    display: flex;
+    margin-left: auto;
+    gap: 10px;
+
+    & > img {
+      width: 5rem;
+      border-radius: 10px;
+    }
+  }
+  .i-task-message {
+    position: relative;
+    background: linear-gradient(
+      -45deg,
+      rgba(136, 56, 240, 1) 20%,
+      rgba(233, 66, 240, 0.75) 100%
+    );
+    color: hsl(275, 69%, 94%);
+    border-radius: 10px 10px 10px 1px;
+    padding: 11.5px 7.5px;
+    max-width: 80%;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+
+    &__price {
+      color: #fff;
+      font-weight: 700;
+      font-size: 2rem;
+      position: absolute;
+      right: 14px;
+    }
+    &__text {
+      margin-left: 2.25rem;
+    }
+  }
+  // Checkbox ✅
+  .i-task-message label {
+    background-color: transparent;
+    border: 1px solid rgb(237, 158, 255);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 28px;
+    position: absolute;
+    width: 28px;
+  }
+
+  .i-task-message label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 7.5px;
+    opacity: 0;
+    position: absolute;
+    top: 9px;
+    transform: rotate(-45deg);
+    width: 12px;
+  }
+
+  .i-task-message input[type="checkbox"] {
+    visibility: hidden;
+  }
+
+  .i-task-message input[type="checkbox"]:checked + label {
+    background-color: #e66bf2;
+    border-color: #e27feb;
+  }
+
+  .i-task-message input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+  }
+}
