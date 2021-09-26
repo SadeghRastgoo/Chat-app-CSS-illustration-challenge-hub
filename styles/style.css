@@ -133,6 +133,12 @@ body {
   color: #a39daa;
 }
 
+i {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .mobile {
   font-size: 1.4rem;
   background-color: #f5f3f7;
@@ -319,6 +325,10 @@ body {
   font-size: 1.15rem;
 }
 
+.m-body-container > * {
+  cursor: pointer;
+}
+
 .m-body-container .i-message {
   color: #9241c8;
   background-color: #ede5f4;
@@ -326,6 +336,14 @@ body {
   padding: 7.5px;
   max-width: 24ch;
   line-height: 1.4;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.07) 0px 8px 15px;
+          box-shadow: rgba(149, 157, 165, 0.07) 0px 8px 15px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.m-body-container .i-message:hover {
+  margin-left: 8px;
 }
 
 .m-body-container .x-message {
@@ -336,6 +354,14 @@ body {
   padding: 7.5px;
   max-width: 24ch;
   line-height: 1.4;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.m-body-container .x-message:hover {
+  margin-right: 8px;
 }
 
 .m-body-container .x-image-message {
@@ -344,11 +370,24 @@ body {
   display: flex;
   margin-left: auto;
   gap: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .m-body-container .x-image-message > img {
   width: 5rem;
   border-radius: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.m-body-container .x-image-message > img:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.m-body-container .x-image-message:hover {
+  margin-right: 8px;
 }
 
 .m-body-container .i-task-message {
@@ -365,6 +404,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.15) 0px 8px 24px;
 }
 
 .m-body-container .i-task-message__price {
@@ -379,7 +420,7 @@ body {
   margin-left: 2.25rem;
 }
 
-.m-body-container .i-task-message label {
+.task-1 label {
   background-color: transparent;
   border: 1px solid #ed9eff;
   border-radius: 50%;
@@ -389,7 +430,7 @@ body {
   width: 28px;
 }
 
-.m-body-container .i-task-message label:after {
+.task-1 label:after {
   border: 2px solid #fff;
   border-top: none;
   border-right: none;
@@ -404,16 +445,54 @@ body {
   width: 12px;
 }
 
-.m-body-container .i-task-message input[type="checkbox"] {
+.task-1 input[type="checkbox"] {
   visibility: hidden;
 }
 
-.m-body-container .i-task-message input[type="checkbox"]:checked + label {
+.task-1 input[type="checkbox"]:checked + label {
   background-color: #e66bf2;
   border-color: #e27feb;
 }
 
-.m-body-container .i-task-message input[type="checkbox"]:checked + label:after {
+.task-1 input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.task-2 label {
+  background-color: transparent;
+  border: 1px solid #ed9eff;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  position: absolute;
+  width: 28px;
+}
+
+.task-2 label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7.5px;
+  opacity: 0;
+  position: absolute;
+  top: 9px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  width: 12px;
+}
+
+.task-2 input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.task-2 input[type="checkbox"]:checked + label {
+  background-color: #e66bf2;
+  border-color: #e27feb;
+}
+
+.task-2 input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
